@@ -1,0 +1,12 @@
+.success blockquote {
+    border-color: #6c0;
+}
+.info blockquote {
+    border-color: #56adec;
+}
+.warning blockquote {
+    border-color: #ffc107;
+}
+.error blockquote {
+    border-color: #f20;
+}
