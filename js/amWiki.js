@@ -151,7 +151,7 @@ $(function () {
         if (sessionStorage['AMWikiIconsSvg']) {
             $('#svgSymbols').append(sessionStorage['AMWikiIconsSvg']);
         } else {
-            $.get('amWiki/images/icons.svg', function (svg) {
+            $.get('images/icons.svg', function (svg) {
                 sessionStorage['AMWikiIconsSvg'] = svg;
                 $('#svgSymbols').append(svg);
             }, 'text').fail(function () {

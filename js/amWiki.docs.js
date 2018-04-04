@@ -500,6 +500,7 @@
     Docs.prototype.loadPage = function (path, callback) {
         //console.log(path);
         var that = this;
+        path = decodeURI(path);
         var url = this._encodeUrl(path, 'normal');
         this.getDoc(url, function (type, data) {
             if (type == 'fail') {
