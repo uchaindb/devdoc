@@ -4,6 +4,8 @@
 
 优链数据库使用区块链技术使得数据库中的数据历史不可更改。
 
+本开发文档在Github上开放：<https://github.com/uchaindb/devdoc>
+
 <blockquote>
 
 ##### 简介
