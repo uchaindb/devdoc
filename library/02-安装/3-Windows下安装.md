@@ -4,12 +4,13 @@
 > * [.Net core 2.0](https://www.microsoft.com/net/download/Windows/run)，其中包含 `.NET Core Runtime` 和 `ASP.NET Core runtime`.
 
 1. 从 <https://github.com/uchaindb/Binary/releases> 下载程序包
-2. 将程序包解压至任意目录
-3. 执行命令
+1. 将程序包解压至任意目录
+1. 对文件appsettings.json进行[配置](?file=02-安装/2-配置 "配置")
+1. 执行命令
   ```
   $ dotnet NodeWeb.dll
   ```
-4. 打开网页查看是否已经顺利启动。默认地址：<http://localhost:5000/version>
+1. 打开网页查看是否已经顺利启动。默认地址：<http://localhost:5000/version>
 
 ## 升级
 
