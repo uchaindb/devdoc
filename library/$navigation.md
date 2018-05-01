@@ -20,7 +20,8 @@
 - [API说明](?file=03-SDK/01-API说明 "API说明")
 - [创建事务相关API](?file=03-SDK/02-创建事务相关API "创建事务相关API")
 - [查询相关API](?file=03-SDK/03-查询相关API "查询相关API")
-- [npm程序包](?file=03-SDK/11-npm程序包 "npm程序包")
+- [nuget程序包](?file=03-SDK/11-nuget程序包 "nuget程序包")
+- [npm程序包](?file=03-SDK/12-npm程序包 "npm程序包")
 
 ##### 示例客户端
 - [AngularX客户端](?file=04-示例客户端/1-AngularX客户端 "AngularX客户端")
