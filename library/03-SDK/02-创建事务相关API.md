@@ -54,16 +54,31 @@
 
 请求示例：
 ```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "CreateSchemaTransaction",
+    "params": [
+        "9E7zCw6Rez2t5FzzdALVSzd3X3h",
+        "285MHeQuCs47yWqT6ezGghtoWz8SzJTcDjRkkvPEhcg7FR93i4m7KV9U6UZqvcZosPfHebyMRhz1hGJN34vEe7bQ",
+        "GoZLYTpJwscZUppymg3nXvpvzoETqzL5JFrrT6nohC8t",
+        null,
+        "{\"Type\":\"CreateSchemaAction\",\"Name\":\"\u6350\u8d60\u8bb0\u5f55\",\"Columns\":[{\"Type\":\"String\",\"Name\":\"Id\",\"PrimaryKey\":true},{\"Type\":\"String\",\"Name\":\"\u6350\u8d60\u91d1\u989d\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u6350\u8d60\u8005Id\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u9644\u8a00\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u9879\u76eeId\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u65f6\u95f4\",\"PrimaryKey\":false}],\"AddOrModifyColumns\":null,\"DropColumns\":null}",
+        "{\"Type\":\"CreateSchemaAction\",\"Name\":\"\u9879\u76ee\",\"Columns\":[{\"Type\":\"String\",\"Name\":\"Id\",\"PrimaryKey\":true},{\"Type\":\"Number\",\"Name\":\"\u76ee\u6807\u91d1\u989d\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u9879\u76ee\u540d\u79f0\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u9879\u76ee\u63cf\u8ff0\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u6240\u5728\u5730\",\"PrimaryKey\":false},{\"Type\":\"String\",\"Name\":\"\u65f6\u95f4\",\"PrimaryKey\":false}],\"AddOrModifyColumns\":null,\"DropColumns\":null}"
+    ]
+}
 ```
 
 返回正确响应示例：
 
 ```json
-```
-
-返回错误响应示例：
-
-```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "TransactionId": "gqGQAfdeFqugvzsQox4Qp2m2P4YJnhAu8pR1tdNfTJW"
+    }
+}
 ```
 
 ### 备注说明
@@ -117,16 +132,30 @@
 
 请求示例：
 ```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "CreateDataTransaction",
+    "params": [
+        "9E7zCw6Rez2t5FzzdALVSzd3X3h",
+        "4UAs1UsQhsV58N3s9HWkrcRR3WQ9ZsT7kckg1DhVt6fhWCDFGWXueHfeZN1KDyDbUz31jFxBJHsKedCAf2deqDLC",
+        "GoZLYTpJwscZUppymg3nXvpvzoETqzL5JFrrT6nohC8t",
+        null,
+        "{\"Type\":\"InsertDataAction\",\"SchemaName\":\"\u6350\u8d60\u8bb0\u5f55\",\"Columns\":[{\"Name\":\"Id\",\"Data\":\"1\"},{\"Name\":\"\u6350\u8d60\u91d1\u989d\",\"Data\":\"2\"},{\"Name\":\"\u6350\u8d60\u8005Id\",\"Data\":\"3\"},{\"Name\":\"\u9644\u8a00\",\"Data\":\"4\"},{\"Name\":\"\u9879\u76eeId\",\"Data\":\"5\"},{\"Name\":\"\u65f6\u95f4\",\"Data\":\"6\"}],\"PrimaryKeyValue\":null}"
+    ]
+}
 ```
 
 返回正确响应示例：
 
 ```json
-```
-
-返回错误响应示例：
-
-```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "TransactionId": "5hoA22FaJKoBgQuhHNnD1RGVRqHWs8knQRMBLLA1hGiQ"
+    }
+}
 ```
 
 ### 备注说明
@@ -197,16 +226,32 @@
 
 请求示例：
 ```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "CreateLockTransaction",
+    "params": [
+        "9E7zCw6Rez2t5FzzdALVSzd3X3h",
+        "2i6GnuU5NTfXSGQxyEF4PEBchn2F2cbuBGZKzw1WMLru4tEKvgGMSgzAeJPZ3NaW6D1peZFuAonTTYigHrYipTcB",
+        "GoZLYTpJwscZUppymg3nXvpvzoETqzL5JFrrT6nohC8t",
+        null,
+        "29uQFTkaBQr745QK8DwMov31FzCyfBcaxetGmSLExEqFu\nOC_CheckSignature",
+        "{\"TargetType\":\"TableSchema\",\"PublicPermission\":[\"ReadOnly\"],\"TableName\":\"\u6350\u8d60\u8bb0\u5f55\"}",
+        "{\"TargetType\":\"TableSchema\",\"PublicPermission\":[\"ReadOnly\"],\"TableName\":\"\u9879\u76ee\"}"
+    ]
+}
 ```
 
 返回正确响应示例：
 
 ```json
-```
-
-返回错误响应示例：
-
-```json
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+        "TransactionId": "3ukVPgPG1gL5pzrMezESUPS2YYPW9wSGg2wrUe5J9n2r"
+    }
+}
 ```
 
 ### 备注说明
