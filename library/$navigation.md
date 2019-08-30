@@ -15,6 +15,7 @@
 - [配置](?file=02-安装/2-配置 "配置")
 - [Windows下安装](?file=02-安装/3-Windows下安装 "Windows下安装")
 - [Docker下安装](?file=02-安装/4-Docker下安装 "Docker下安装")
+- [实验功能](?file=02-安装/5-实验功能 "实验功能")
 
 ##### SDK
 - [API说明](?file=03-SDK/01-API说明 "API说明")
