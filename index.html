@@ -1,220 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="renderer" content="webkit">
-        <title>优链数据库开发文档</title>
-        <link rel="stylesheet" type="text/css" href="css/markdownbody.github.css" />
-        <link rel="stylesheet" type="text/css" href="css/lhjs.github-gist.css" />
-        <link rel="stylesheet" type="text/css" href="css/amWiki.css" />
-        <link rel="stylesheet" type="text/css" href="css/extra.css" />
-        
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <title>优链数据库开发文档</title>
+  <link rel="icon" href="_media/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="keywords" content="doc,docs,documentation,blockchain,database,bitcoin,区块链,数据库,比特币">
+  <meta name="description" content="优链数据库 开发文档。development document for blockchain database uchaindb">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="/_media/vue.min.css" title="vue">
+  <link rel="stylesheet" href="//unpkg.com/prismjs/themes/prism.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    nav.app-nav li ul {
+      min-width: 100px;
+    }
+    article > p, article blockquote > p, .docsify-tabs__content > p {
+      text-indent: 2em;
+    }
+    article > p > img, article blockquote > p > img, .docsify-tabs__content > p > img {
+      margin-left: -2em;
+    }
+    article > ul > li, article > ol > li 
+    article blockquote > ul > li, article blockquote > ol > li {
+      margin-left: 2em;
+    }
+    pre > code.lang-csharp .token.comment {
+      color: green;
+    }
+    article > div.tip {
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px;
+      position: relative;
+      border-left: 4px solid rgb(255, 102, 102);
+      margin: 2em 0px;
+      padding: 12px 24px 12px 30px;
+      background-color: rgb(248, 248, 248);
+    }
+    article > .footer, article > .footer a{
+      color: #ccc;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    .markdown-section pre + p.coderef {
+      margin-top: -1.2em;
+    }
+    .markdown-section p.coderef {
+      background: rgba(66,185,131,.1);
+      border-radius: 2px;
+      padding: 1rem;
+    }
+    .success blockquote {
+        border-color: #6c0;
+    }
+    .info blockquote {
+        border-color: #56adec;
+    }
+    .warning blockquote {
+        border-color: #ffc107;
+    }
+    .error blockquote {
+        border-color: #f20;
+    }
+    .api-stability {
+        color: white !important;
+        margin: 0 0 1rem 0;
+        padding: 1rem;
+        line-height: 1.5;
+    }
+    .api-stability a {
+        color: white !important;
+        text-decoration: underline;
+    }
+    .api-stability-0 {
+        background-color: #d60027;
+    }
+    .api-stability-1 {
+        background-color: #ec5315;
+    }
+    .api-stability-2 {
+        background-color: #4eba0f;
+    }
+  </style>
+</head>
 
-    <body>
-        <!-- 头部 -->
-        <header class="header">
-            <div class="header-inner">
-                <a class="logo" href="?file=首页">
-                    <img src="images/logo.png" /><i></i>
-                    <b>优链数据库开发文档</b>
-                    <span>V0.1</span>
-                </a>
-                <div class="menu-icon" id="menuIcon">
-                    <svg>
-                        <use xlink:href="#icon:navStart"></use>
-                    </svg>
-                </div>
-            </div>
-        </header>
-        <!-- 页面 -->
-        <div class="container" id="container">
-            <div class="nav" id="nav">
-                <div class="menu-filter">
-                    <svg>
-                        <use xlink:href="#icon:navFilter"></use>
-                    </svg>
-                    <input type="text" id="menuFilter" value="" placeholder="请输入筛选条件" title="请输入筛选条件" />
-                    <i class="off" title="清空筛选">&times;</i>
-                </div>
-                <div class="menu-search" id="searchShow" title="全库搜索">
-                    <svg>
-                        <use xlink:href="#icon:search"></use>
-                    </svg>
-                </div>
-                <nav class="menubar scroller" id="menuBar" data-x-rolling="true">
-                    <div class="scroller-inner">
-                        <div class="scroller-content"></div>
-                    </div>
-                </nav>
-            </div>
-            <div class="main scroller" id="main">
-                <div class="main-inner scroller-inner">
-                    <!-- 正文 -->
-                    <article class="markdown-body scroller-content" id="view"></article>
-                    <script id="template:footnote" type="text/html">
-                        <sup><a href="#fn:foot{{index}}" name="fn:note{{index}}" title="{{title}}">[{{index}}]</a></sup>
-                        <ol class="footnote"><i>[参考资料]：</i>{{list}}</ol>
-                        <li id="fn:foot{{index}}">{{content}} {{back}}</li>
-                        <li class="footnote-none" data-msg="匹配缺失">{{content}}</li>
-                        <a href="#fn:note{{index}}">
-                            <svg>
-                                <use xlink:href="#icon:footnoteBack"></use>
-                            </svg>
-                        </a>
-                    </script>
-                    <!-- 上下翻页 -->
-                    <div class="main-sibling scroller-content" id="mainSibling">
-                        <p><span>上一篇：</span>
-                            <a href="#"></a>
-                        </p>
-                        <p><span>下一篇：</span>
-                            <a href="#"></a>
-                        </p>
-                    </div>
-                    <!-- 全库搜索 -->
-                    <div class="search-box" id="searchBox">
-                        <div class="search-update">
-                            <input type="button" id="searchUpdate" value="更新所有缓存" />
-                            <div class="text">
-                                <p>上次完全更新：<time id="cacheLasttime">0000-00-00 00:00:00</time></p>
-                                <p>文档总数：<b id="cacheDocTotal">0</b> <i>/</i> <span>已缓存：<i id="cacheState">0%</i></span></p>
-                            </div>
-                        </div>
-                        <h2>全库搜索</h2>
-                        <div class="search-input">
-                            <input type="text" id="searchText" placeholder="请输入搜索内容" />
-                            <input type="button" id="search" value="搜 索" />
-                        </div>
-                        <div class="search-results" id="results">
-                            <div class="search-result-message" id="resultMsg"></div>
-                            <ul class="search-list"></ul>
-                            <div class="search-result-more" id="resultMore">显示更多</div>
-                            <script id="template:searchResult" type="text/html">
-                                <li class="search-item">
-                                    <a href="?file={{path}}">
-                                        <div class="content">
-                                            <strong>{{title}}</strong> {{api}} {{content}}
-                                        </div>
-                                        <div class="bottom">
-                                            <p>位置：<span>{{path}}</span></p>
-                                            <div class="time">最后缓存于
-                                                <time>{{time}}</time>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </script>
-                        </div>
-                    </div>
-                    <!-- 接口测试 -->
-                    
-                </div>
-            </div>
-        </div>
-        <aside>
-            <!-- 侧边目录 -->
-            <div class="contents" id="contents">
-                <div class="btn">
-                    <svg>
-                        <use xlink:href="#icon:contents"></use>
-                    </svg>
-                    <span>目录</span>
-                </div>
-                <div class="contents-list">
-                    <p>
-                        <a id="contentsTitle" href="#客户日志流水接口示例">客户日志流水接口示例</a>
-                    </p>
-                    <div class="markdown-contents"></div>
-                </div>
-            </div>
-            <!-- 返回顶部 -->
-            <div class="back-top" id="backTop">
-                <a class="back-icon" href="#">
-                    <svg>
-                        <use xlink:href="#icon:backTop"></use>
-                    </svg>
-                </a>
-                <a class="back-text" href="#">返回顶部</a>
-            </div>
-        </aside>
-        <!-- 图片预览 -->
-        <section class="imgsv" id="imgsView">
-            <div class="imgsv-background"></div>
-            <div class="imgsv-view" id="imgsViewInner"></div>
-            <ul class="imgsv-panel">
-                <li class="prev off">Prev</li>
-                <li class="next">Next</li>
-                <li class="original">1:1</li>
-                <li class="suit">适合</li>
-            </ul>
-        </section>
-        <footer>
-            <!-- 签名 -->
-            <div class="signature">
-                <span><a href="http://www.uchaindb.com" target="_blank">优链数据库</a> 开发文档</span>
-                | 由
-                <a href="https://github.com/TevinLi/amWiki" target="_blank">amWiki</a>
-                驱动
-            </div>
-        </footer>
-        <!-- mounts -->
-        <div class="hidden" aw-include="mountLinks">
-            <script>AWConfig={"name":"优链数据库开发文档","version":"V0.1","logo":"images/logo.png","testing":false,"colour":"#4296eb","pageMounts":false,"githubUrl":"","libraryPrefix":""}</script>
-        </div>
-        <!-- js -->
-        <div class="hidden">
-            <script type="text/javascript" src="js/gbk.js"></script>
-            <script type="text/javascript" src="js/pinyin.js"></script>
-            <script type="text/javascript" src="js/jquery-compat-3.1.0.min.js"></script>
-            <script type="text/javascript" src="js/marked.min.js"></script>
-            <script type="text/javascript" src="js/highlight.pack.js"></script>
-            <script type="text/javascript" src="js/raphael-min.js"></script>
-            <script type="text/javascript" src="js/flowchart.min.js"></script>
-            <script type="text/javascript" src="js/amWiki.tools.js"></script>
-            <script type="text/javascript" src="js/amWiki.storage.js"></script>
-            <script type="text/javascript" src="js/amWiki.search.js"></script>
-            <script type="text/javascript" src="js/amWiki.search.worker.js"></script>
-            <script type="text/javascript" src="js/amWiki.docs.js"></script>
-            
-            <script type="text/javascript" src="js/amWiki.scrollbar.js"></script>
-            <script type="text/javascript" src="js/amWiki.imgsView.js"></script>
-            <script type="text/javascript" src="js/amWiki.js"></script>
-            
-        </div>
-        <!-- svg -->
-        <div class="hidden" id="svgSymbols"></div>
-        <!-- 低版本浏览器警告 -->
-        <div id="lowBrowser">
-            <div></div>
-            <p><span>您的浏览器版本过低，不支持浏览本Wiki，请升级或更换您的浏览器再试！</span></p>
-            <script>
-                (function(win) {
-                    var notice = document.getElementById('lowBrowser');
-                    //jQuery 3.x 需要 addEventListener 方法支持
-                    if(typeof win.addEventListener == 'undefined') {
-                        notice.style.display = 'block';
-                    } else {
-                        var comments = notice.previousSibling;
-                        if(comments.nodeType == 8) {
-                            comments.parentNode.removeChild(comments);
-                        } else if(comments.previousSibling.nodeType == 8) {
-                            comments = comments.previousSibling;
-                            comments.parentNode.removeChild(comments);
-                        }
-                        notice.parentNode.removeChild(notice);
-                    }
-                    notice = comments = null;
-                })(window);
-            </script>
-        </div>
-        <div style="display:none;">
-            <script src="https://s22.cnzz.com/z_stat.php?id=1273510887&web_id=1273510887" language="JavaScript"></script>
-            <script type="text/javascript" src="//js.users.51.la/19463623.js"></script>
-        </div>
-    </body>
+<body>
+  <div id="app">Loading ...</div>
+  <script>
+    var glossary = [
+      { 
+        name: '哈希',
+        detail: 'Hash',
+        ref: '#/section1/1-Overview'
+      },
+      { 
+        name: '协因子',
+        detail: 'cofactor',
+      },
+      { 
+        name: '未使用交易',
+        detail: 'UTXO: Unspent Transaction(TX) Output',
+      },
+      { 
+        name: '公钥哈希值支付',
+        detail: 'P2PKH: Pay To Public Key Hash',
+      },
+    ];
+    var num = 0;
+    mermaid.initialize({ startOnLoad: false });
+
+    window.$docsify = {
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return (
+                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              );
+            }
+            if (lang === "cs") {
+              return this.origin.code.apply(this, [code, "csharp"]);
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      },
+      alias: {
+        '/.*/_navbar.md': '/_navbar.md',
+      },
+      auto2top: true,
+      coverpage: false,
+      executeScript: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      mergeNavbar: true,
+      maxLevel: 2,
+      logo: '_media/logo.png',
+      subMaxLevel: 3,
+      name: '优链数据库开发文档',
+      search: {
+        noData: {
+          '/': '没有结果!'
+        },
+        paths: 'auto',
+        placeholder: {
+          '/': '搜索'
+        }
+      },
+      copyCode: {
+        buttonText : '复制代码',
+        errorText  : '复制出错了',
+        successText: '已复制'
+      },
+      plantuml: {
+        skin: 'classic',
+        serverPath: '//www.plantuml.com/plantuml/svg/',
+      },
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('raw.githubusercontent.com', 'github.com')
+                .replace(/\/master/, '/blob/master')
+            } else {
+              url = 'https://github.com/uchaindb/devdoc/blob/gh-pages/' + vm.route.file
+            }
+            var editHtml = '[:memo: 编辑此文档](' + url + ')\n'
+
+            return editHtml
+              + html
+              + '\n\n----\n\n'
+              + `<div class="footer">
+              作者：
+              <a href="https://github.com/uchaindb" target="_blank">优链数据库</a>
+              <a href="https://www.icerdesign.com" target="_blank">梁爽</a>
+              | 主题： <a href="https://docsify.js.org" target="_blank">docsify</a>
+              </div>`
+          })
+        },
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            return html.replace(
+              /<!-- code:(.*?)(?:;branch:(.*?))?(?:;line:(\d+?)-(\d+?))? -->/g,
+              function(match, path, branch, lstart, lend){
+                branch = branch || "master";
+                const loc = (lstart && lend) ? `#L${lstart}-L${lend}` : "";
+                const locDesc = (lstart && lend) ? `\n代码行：${lstart}-${lend}` : "";
+                return `<p class="coderef">
+                  :octocat: 参考代码：
+                  <a href="https://github.com/uchaindb/devdoc/blob/${branch}/${path}${loc}"
+                     title="分支：\[${branch}\]${locDesc}" target="_blank">
+                      ${path}
+                  </a>
+                </p>`;
+              });
+          })
+        },
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            return html.replace(/\^(.+?)\^(?!(.*end-(block|inline)-katex))/g, "<sup>$1</sup>");
+          })
+        },
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            for (var i = 0, len = glossary.length; i < len; i++) {
+              var re = new RegExp('`' + glossary[i].name + '`', 'g');
+              html = html.replace(re, `<abbr title="${glossary[i].detail}">${glossary[i].name}</abbr>`);
+            }
+            return html;
+          })
+        },
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            return html.replace(/读书提示：.*?。/g, "");
+          })
+        }
+      ]
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-csharp.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code@2.1.0"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/docsify-plantuml/dist/docsify-plantuml.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  
+  <script>
+    ((window.gitter = {}).chat = {}).options = { room: 'uchaindb/Lobby' };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  <div style="display: none;">
+    <script type="text/javascript" src="//js.users.51.la/19463623.js"></script>
+    <script type="text/javascript" src="//s22.cnzz.com/z_stat.php?id=1273510887&web_id=1273510887"></script>
+  </div>
+</body>
 
 </html>
