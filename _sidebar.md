@@ -15,6 +15,7 @@
 
 - API
 
+  - [SDK](docs/sdk.md)
   - [说明](docs/api.md)
   - [事务](docs/api-transaction.md)
   - [查询](docs/api-query.md)
