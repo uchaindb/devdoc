@@ -1,10 +1,27 @@
 <!-- - [序言](Prologue.md) -->
 
-- [简介](docs/01-简介.md)
-- [安装](docs/02-安装.md)
-- [SDK](docs/03-SDK.md)
-- [示例客户端](docs/04-示例客户端.md)
-- [云服务](docs/05-云服务.md)
-- [案例分析](docs/08-案例分析.md)
-- [使用教程](docs/09-使用教程.md)
+- 入门
 
+  - [简介](docs/start.md)
+  - [安装](docs/installation.md)
+  - [配置](docs/config.md)
+  - [使用](docs/basic-usage.md)
+
+- 开发
+
+  - [系统架构](docs/architecture.md)
+  - [管理工具](docs/client.md)
+  - [性能说明](docs/performance.md)
+
+- API
+
+  - [说明](docs/api.md)
+  - [事务](docs/api-transaction.md)
+  - [查询](docs/api-query.md)
+
+- 指南
+
+  - [案例分析](docs/cases.md)
+  - [影子方案](docs/shadowdb.md)
+  - [常见问题](docs/faq.md)
+  - [产品蓝图](docs/roadmap.md)
