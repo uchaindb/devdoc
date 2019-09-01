@@ -6,7 +6,17 @@ language: zh-CN
 
 # Variables for Latex
 documentclass: book
+papersize: a4
+geometry:
+# - inner=3cm
+# - outer=1cm
+- margin=1.5cm
+# classoption: twoside
 classoption: oneside
-fontsize: 12pt
+fontsize: 10pt
 toc: true
+toc-depth: 2
+numbersections: true
+secnumdepth: 2
+linestretch: 1.25
 ---

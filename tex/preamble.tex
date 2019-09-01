@@ -1,5 +1,5 @@
 % Paper and margins
-\usepackage[a4paper, margin=1in]{geometry}
+% \usepackage[a4paper,inner=3cm,outer=1cm, margin=1cm]{geometry}
 
 % Fonts
 \usepackage[UTF8]{ctex}
@@ -18,3 +18,32 @@
 
 % Headers and footers
 \pagestyle{plain}
+
+% title
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+% this alters "before" spacing (the second length argument) to 0
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+
+% reduce code font size
+\usepackage{setspace}
+\renewenvironment{Shaded} {\begin{snugshade}\footnotesize\singlespace} {\end{snugshade}}
+
+% color inline code
+\usepackage{fancyvrb,newverbs,xcolor}
+
+\definecolor{Light}{HTML}{F4F4F4}
+
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{
+  \colorbox{Light}{\oldtexttt{#1}}
+}
+
+% color no highlight code
+
+% \renewcommand{verbatim}[1]{
+%   \colorbox{Light}{#1}
+% }

@@ -132,7 +132,9 @@ function preprocess(content) {
 
 readFiles('docs/', function(filename, content) {
   let pcnt = preprocess(content);
-  pcnt = marked(pcnt);
+  // pcnt = marked(pcnt);
+  // filename = path.basename(filename, '.md') + '.html';
+  filename = path.basename(filename);
   let filepath = tmpdir + filename;
   // console.log(filepath);
 

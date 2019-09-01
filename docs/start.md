@@ -19,7 +19,7 @@
 1. 将程序包解压至任意目录
 1. 对文件appsettings.json进行[配置](/docs/config "配置")
 1. 执行命令
-  ```
+  ```sh
   $ dotnet NodeWeb.dll
   ```
 1. 打开网页查看是否已经顺利启动。默认地址：<http://localhost:5000/version>
@@ -28,7 +28,7 @@
 
 基于镜像，运行容器
 
-```
+```sh
 $ docker run -it --name demo -p 8912:80 uchaindb/uchaindb:latest
 ```
 

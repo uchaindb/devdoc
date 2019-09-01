@@ -2,28 +2,29 @@
 cd ./tmp
 
 chapters="\
-  docs/start.md \
-  docs/installation.md \
-  docs/config.md \
-	docs/basic-usage.md \
+  start.md \
+  installation.md \
+  config.md \
+  basic-usage.md \
 
-	docs/architecture.md \
-	docs/client.md \
-	docs/performance.md \
+  architecture.md \
+  client.md \
+  performance.md \
 
-	docs/sdk.md \
-	docs/api.md \
-  docs/api-transaction.md \
-	docs/api-query.md \
+  sdk.md \
+  api.md \
+  api-transaction.md \
+  api-query.md \
 
-  docs/cases.md \
-	docs/shadowdb.md \
-	docs/faq.md \
-	docs/roadmap.md \
-  docs/changes.md \
+  cases.md \
+  shadowdb.md \
+  faq.md \
+  roadmap.md \
+  changes.md \
 	"
 
-options="../metadata.yaml --highlight-style tango"
+options="--highlight-style=tango --pdf-engine=xelatex"
 
-pandoc -o ../devbook.pdf -H ../tex/preamble.tex --latex-engine=xelatex $options $chapters
+pandoc -o ../devbook.pdf -H ../tex/preamble.tex $options --metadata-file=../metadata.yaml $chapters
+# pandoc -o ../devbook.tex -H ../tex/preamble.tex $options --metadata-file=../metadata.yaml $chapters
 
