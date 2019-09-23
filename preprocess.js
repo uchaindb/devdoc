@@ -127,6 +127,9 @@ function preprocess(content) {
     var re = new RegExp('`' + glossary[i].name + '`', 'g');
     pcnt = pcnt.replace(re, `<abbr title="${glossary[i].detail}">${glossary[i].name}</abbr>`);
   }
+
+  pcnt = pcnt.replace(/^(#.*) \{docsify-.*\}/gm, "$1");
+  pcnt = pcnt.replace(/\[\s*!\[NuGet].*\s*.*\s*\]\((.*)\)/gm, "[Nuget]($1)");
   return pcnt;
 }
 

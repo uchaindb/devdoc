@@ -1,4 +1,4 @@
-## 入门
+## 简介 {docsify-ignore}
 
 优链数据库使用区块链技术使得数据库中的数据历史不可更改。
 
@@ -10,7 +10,7 @@
 * Mac（理论支持，尚未测试）
 
 
-### 直接运行
+**直接运行**
 
 > 前置条件:
 > * [.Net core 2.0](https://www.microsoft.com/net/download/Windows/run)
@@ -24,7 +24,7 @@
   ```
 1. 打开网页查看是否已经顺利启动。默认地址：<http://localhost:5000/version>
 
-### Docker中运行
+**Docker中运行**
 
 基于镜像，运行容器
 
@@ -32,7 +32,7 @@
 $ docker run -it --name demo -p 8912:80 uchaindb/uchaindb:latest
 ```
 
-### 管理工具
+**管理工具**
 
 服务器启动后，默认会启用本地的管理工具，使用服务器暴露的端口进行访问。
 

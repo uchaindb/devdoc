@@ -1,4 +1,4 @@
-# 管理工具
+## 管理工具
 
 优链数据库管理工具——AngularX版本，具备以下功能：
 
@@ -12,9 +12,9 @@
 源代码开放在 [GitHub](https://github.com/uchaindb/UClient) 上，
 您可以基于该客户端进行二次开发发布，该源代码使用MIT协议。
 
-## 编译
+### 编译
 
-### 使用 webpack
+#### 使用 webpack
 
 ```bash
 $ cd src
@@ -22,14 +22,14 @@ $ npm install
 $ npm run build
 ```
 
-### 使用 msbuild
+#### 使用 msbuild
 
 ```bash
 $ cd src
 $ dotnet build --configuration release
 ```
 
-## 移动版编译(Cordova)
+### 移动版编译(Cordova)
 
 ```bash
 $ npm install -g cordova
@@ -39,7 +39,7 @@ $ cordova build ios
 $ cordova build android
 ```
 
-## 包含脚本
+### 包含脚本
 
 - `src` 目录下
   - `npm run serve`: 命令行方式启动webpack进行开发
@@ -50,7 +50,7 @@ $ cordova build android
 - `cordova` 目录下
   - `npm run copy`: 将主目录中的webpack编译结果拷贝过来，以便进一步打包移动版
 
-## 代码结构
+### 代码结构
 
 以下为代码目录结构
 
@@ -91,6 +91,6 @@ $ cordova build android
         \---images              # 站点的图片文件
 ```
 
-## 协议
+### 协议
 
 Licensed under the [MIT license](LICENSE).

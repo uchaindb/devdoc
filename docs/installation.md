@@ -1,4 +1,6 @@
-## 直接运行
+## 安装
+
+### 直接运行
 
 > 前置条件:
 > * [.Net core 2.0](https://www.microsoft.com/net/download/Windows/run)，其中包含 `.NET Core Runtime` 和 `ASP.NET Core runtime`.
@@ -12,20 +14,20 @@
   ```
 1. 打开网页查看是否已经顺利启动。默认地址：<http://localhost:5000/version>
 
-### 升级
+#### 升级
 
 1. 下载新的程序包
 2. 解压至同一目录
 
 **注意**：请自行备份配置文件
 
-### 卸载
+#### 卸载
 
 将解压出来的文件删除即可完成卸载。
 
-## Docker
+### Docker
 
-### 准备 Docker 环境
+#### 准备 Docker 环境
 
 具体步骤可以参考[官网安装步骤(英文)](https://docs.docker.com/install/)
 或者 [Docker安装指南(国内中文)](https://yeasy.gitbooks.io/docker_practice/content/install/)，
@@ -35,7 +37,7 @@
 $ docker -v
 ```
 
-### 运行容器
+#### 运行容器
 
 基于镜像，运行容器
 
@@ -43,7 +45,7 @@ $ docker -v
 $ docker run -it --name demo -p 8912:80 uchaindb/uchaindb:latest
 ```
 
-### 快速在线Demo
+#### 快速在线Demo
 
 使用Play with Docker的服务，可以快速方便的在网上架设一个临时的demo环境，使用步骤：
 
@@ -72,7 +74,7 @@ $ docker run -it --name demo -p 8912:80 uchaindb/uchaindb:latest
 
 这个临时虚拟环境可以最长运行4小时，你可以随时点击 `CLOSE SESSION` 停止和关闭这个虚拟环境，所有的云端资料也会被抹除。
 
-### 简单操作
+#### 简单操作
 
 初始化完成后，你就获得了一个全功能的演示环境
 
