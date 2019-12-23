@@ -11,7 +11,7 @@
 | 配置项                                                    | 类型   | 默认值                        | 描述                                     |
 | ---                                                       | ---    | ---                           | ---                                      |
 | AppSettings:EnableAdminIndex                              | 布尔型 | false                         | 是否在该节点启动管理工具\*               |
-| AppSettings:NetworkId                                     | 数字   | 123456789                     | 优链网络Id，不同网络Id互相不进行通信     |
+| AppSettings:NetworkId                                     | 数字   | 123456789                     | 优擎网络Id，不同网络Id互相不进行通信     |
 | AppSettings:WellKnownNodeAddresses                        | 字符串 | 【空】                        | 默认启动时的种子服务器地址               |
 | AppSettings:Persistent:Adapter                            | 字符串 | "LiteDb"                      | 存储介质选择，可为`LiteDb`或`AzureTable` |
 | AppSettings:Persistent:LiteDb:ConnectionString            | 字符串 | "Filename=NodeWeb1.db"        | 使用LiteDb时的链接字符串                 |

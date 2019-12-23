@@ -1,13 +1,13 @@
-<h2 align="center"><img src="https://github.com/uchaindb/devdoc/blob/master/_media/logo.png?raw=true" height="128"><br>优链数据库</h2>
+<h2 align="center"><img src="https://github.com/uchaindb/devdoc/blob/master/_media/logo.png?raw=true" height="128"><br>优擎区块链数据库</h2>
 <p align="center"><strong>开发文档</strong></p>
 
-优链数据库使用区块链技术使得数据库中的数据历史不可更改。
+优擎区块链数据库使用区块链技术使得数据库中的数据历史不可更改。
 
 访问这里查看文档：<http://doc.uchaindb.com>
 
 # 入门指引
 
-优链数据库使用区块链技术使得数据库中的数据历史不可更改。
+优擎区块链数据库使用区块链技术使得数据库中的数据历史不可更改。
 
 ![Overview](docs/images/01/server-client-overview.png "Overview")  
 
@@ -16,11 +16,11 @@
 - [服务器](#服务器)
 - [客户端](#客户端)
 
-优链数据库[影子解决方案](?file=docs/shadowdb "影子方案")，
-是在优链数据库的基础上提供的一种简单易行上链方案：
+优擎区块链数据库[影子解决方案](?file=docs/shadowdb "影子方案")，
+是在优擎区块链数据库的基础上提供的一种简单易行上链方案：
 
 - 可以不用对现有系统进行内部改造；
-- 优链数据库影子方案可以部署至同一台服务器或完全独立的服务器上；
+- 优擎区块链数据库影子方案可以部署至同一台服务器或完全独立的服务器上；
 - 所有数据及时上链，更改信息可追溯；
 - 可选择公布信息，用户使用客户端查看公开信息；
 
@@ -28,7 +28,7 @@
 
 ## 服务器
 
-优链数据库使用C#开发，采用.NET Core跨平台框架，支持以下操作系统：
+优擎区块链数据库使用C#开发，采用.NET Core跨平台框架，支持以下操作系统：
 
 * Windows x64/x86
 * Linux x64

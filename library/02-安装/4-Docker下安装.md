@@ -35,12 +35,12 @@ $ docker run -it --name demo -p 8912:80 uchaindb/uchaindb:latest
 
   ![initializing](images/02/pwd-step3.png)
 
-* 步骤 4: 优链数据库会在后台自动进行初始化，如果想要看到整个过程的日志，输入
+* 步骤 4: 优擎区块链数据库会在后台自动进行初始化，如果想要看到整个过程的日志，输入
   `docker logs -f pwd`**&lt;按tab键自动完成输入&gt;**.
 
   ![monitor process](images/02/pwd-step4.png)
 
-* 步骤 5: 点击页面上部的数字 `8912` 以打开刚才启动的优链数据库实例
+* 步骤 5: 点击页面上部的数字 `8912` 以打开刚才启动的优擎区块链数据库实例
 
   ![find port](images/02/pwd-step5.png)
   ![main ui](images/02/db-step1.png)
@@ -63,6 +63,6 @@ $ docker run -it --name demo -p 8912:80 uchaindb/uchaindb:latest
 
   ![](images/02/db-step3.png)
 
-* 步骤 4: 最终你成功的连接上了优链数据库
+* 步骤 4: 最终你成功的连接上了优擎区块链数据库
 
   ![](images/02/db-step4.png)
